@@ -338,21 +338,6 @@ nav.scrolled .nav-logo-img{height:46px}
   filter:drop-shadow(0 4px 32px rgba(0,0,0,.7));
 }
 
-/* ─── STATS STRIP ───────────────────────── */
-.stats-strip{
-  border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);
-  padding:2.5rem var(--px);
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;
-  background:var(--near-black);
-}
-.stat-item{text-align:center}
-.stat-num{
-  font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);
-  background:var(--chrome-subtle);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  line-height:1;
-}
-.stat-label{font-family:'Barlow Condensed',sans-serif;font-size:.67rem;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-dark);margin-top:.4rem}
-
 /* ─── SECTION BASE ──────────────────────── */
 section{padding:6rem var(--px);position:relative}
 .section-tag{
@@ -367,27 +352,6 @@ section{padding:6rem var(--px);position:relative}
   background:var(--chrome-subtle);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   margin-bottom:1.5rem;
 }
-
-/* ─── SERVICES ──────────────────────────── */
-#services{background:var(--near-black)}
-.services-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:4rem}
-.services-intro{font-size:1rem;line-height:1.8;color:var(--silver-mid);max-width:400px;align-self:end}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.06)}
-.service-card{
-  background:var(--near-black);padding:2.5rem 2rem;
-  position:relative;overflow:hidden;transition:background .4s;
-  -webkit-tap-highlight-color:transparent;
-}
-.service-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 0% 100%,rgba(200,200,200,.04) 0%,transparent 60%);opacity:0;transition:opacity .4s}
-.service-card:hover{background:#141414}
-.service-card:hover::before{opacity:1}
-.service-num{font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:.15em;color:var(--silver-dark);margin-bottom:2rem}
-.service-icon{width:44px;height:2px;background:var(--chrome-subtle);margin-bottom:1.5rem;transition:width .4s}
-.service-card:hover .service-icon{width:68px}
-.service-name{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;letter-spacing:.08em;text-transform:uppercase;color:var(--silver-light);font-weight:600;margin-bottom:.8rem;line-height:1.2}
-.service-desc{font-size:.875rem;line-height:1.8;color:var(--silver-dark)}
-.service-tags{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.4rem}
-.service-tag{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--silver-dark);border:1px solid rgba(255,255,255,.1);padding:.3rem .6rem}
 
 /* ─── PROCESS ───────────────────────────── */
 #process{background:var(--black)}
@@ -408,18 +372,6 @@ section{padding:6rem var(--px);position:relative}
 .diagram-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
 .diagram-center-icon{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;background:var(--chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
 .diagram-center-label{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--silver-dark)}
-
-/* ─── RESULTS ───────────────────────────── */
-#results{background:var(--near-black)}
-.results-intro{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3rem}
-.results-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.06)}
-.result-card{background:var(--near-black);padding:2.5rem;position:relative;overflow:hidden}
-.result-card::after{content:'';position:absolute;bottom:0;left:0;height:2px;width:0;background:var(--chrome-subtle);transition:width .5s ease}
-.result-card:hover::after{width:100%}
-.result-industry{font-family:'Barlow Condensed',sans-serif;font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--silver-dark);margin-bottom:1.2rem}
-.result-metric{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,5vw,4rem);background:var(--chrome-subtle);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.4rem}
-.result-desc{font-family:'Barlow Condensed',sans-serif;font-size:1rem;color:var(--silver);margin-bottom:.8rem}
-.result-detail{font-size:.8rem;color:var(--silver-dark);line-height:1.7}
 
 /* ─── PORTFOLIO ─────────────────────────── */
 #portfolio{background:var(--black)}
@@ -898,6 +850,144 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
   .audit-headline{font-size:2.6rem}
 }
 
+
+/* ─── TRUST BAR ─────────────────────────────────────────────── */
+.trust-bar{
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  background:var(--near-black);
+  padding:1.5rem var(--px);
+  display:flex;align-items:center;justify-content:center;
+  gap:0;flex-wrap:wrap;
+  overflow:hidden;
+}
+.trust-item{
+  display:flex;align-items:center;gap:.75rem;
+  padding:.6rem 2rem;
+  position:relative;
+}
+/* Dividers between items */
+.trust-item:not(:last-child)::after{
+  content:'';position:absolute;right:0;top:50%;transform:translateY(-50%);
+  width:1px;height:24px;background:rgba(255,255,255,.08);
+}
+.trust-item-icon{
+  font-family:'Bebas Neue',sans-serif;font-size:1.3rem;
+  background:var(--chrome-subtle);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1;flex-shrink:0;
+}
+.trust-item-copy{display:flex;flex-direction:column;gap:1px}
+.trust-item-label{
+  font-family:'Barlow Condensed',sans-serif;font-size:.72rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--silver-light);
+  font-weight:600;
+}
+.trust-item-sub{
+  font-family:'Barlow Condensed',sans-serif;font-size:.6rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--silver-dark);
+}
+
+/* ─── COMBINED SERVICES + HOW WE WORK ───────────────────────── */
+#services{background:var(--near-black)}
+
+/* Section intro — 2-col header */
+.services-header{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:end;margin-bottom:4rem;
+}
+.services-intro{
+  font-size:1rem;line-height:1.8;color:var(--silver-mid);
+  max-width:420px;align-self:end;
+}
+
+/* ── 3 Service cards ── */
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:rgba(255,255,255,.06);
+  margin-bottom:1px; /* connect visually to process row */
+}
+.service-card{
+  background:var(--near-black);padding:2.5rem 2rem;
+  position:relative;overflow:hidden;transition:background .4s;
+  -webkit-tap-highlight-color:transparent;
+}
+.service-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 0% 100%,rgba(200,200,200,.04) 0%,transparent 60%);
+  opacity:0;transition:opacity .4s;
+}
+.service-card:hover{background:#141414}
+.service-card:hover::before{opacity:1}
+.service-num{font-family:'Bebas Neue',sans-serif;font-size:.9rem;letter-spacing:.15em;color:var(--silver-dark);margin-bottom:2rem}
+.service-icon{width:44px;height:2px;background:var(--chrome-subtle);margin-bottom:1.5rem;transition:width .4s}
+.service-card:hover .service-icon{width:68px}
+.service-name{
+  font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--silver-light);
+  font-weight:600;margin-bottom:.8rem;line-height:1.2;
+}
+.service-desc{font-size:.875rem;line-height:1.8;color:var(--silver-dark)}
+.service-tags{margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.service-tag{
+  font-family:'Barlow Condensed',sans-serif;font-size:.6rem;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--silver-dark);
+  border:1px solid rgba(255,255,255,.1);padding:.3rem .6rem;
+}
+
+/* ── 4-step process row (below cards, same section) ── */
+.process-divider{
+  display:flex;align-items:center;gap:1rem;
+  padding:2rem 0 2.5rem;
+}
+.process-divider-line{flex:1;height:1px;background:rgba(255,255,255,.06)}
+.process-divider-label{
+  font-family:'Barlow Condensed',sans-serif;font-size:.62rem;
+  letter-spacing:.4em;text-transform:uppercase;color:var(--silver-dark);
+  white-space:nowrap;
+}
+
+.process-steps-row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:rgba(255,255,255,.06);
+}
+.process-step-card{
+  background:var(--near-black);padding:2rem 1.75rem;
+  position:relative;transition:background .35s;
+}
+.process-step-card:hover{background:#141414}
+.process-step-num{
+  font-family:'Bebas Neue',sans-serif;font-size:2.8rem;
+  color:rgba(255,255,255,.06);line-height:1;margin-bottom:1rem;
+  transition:color .3s;display:block;
+}
+.process-step-card:hover .process-step-num{color:rgba(255,255,255,.15)}
+.process-step-title{
+  font-family:'Barlow Condensed',sans-serif;font-size:1rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--silver);font-weight:600;margin-bottom:.5rem;
+}
+.process-step-desc{font-size:.82rem;line-height:1.75;color:var(--silver-dark)}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .trust-bar{gap:0;padding:1.25rem 1rem}
+  .trust-item{padding:.5rem 1.1rem}
+  .trust-item:nth-child(n+3)::after{display:none}
+  .services-header{grid-template-columns:1fr;gap:1.5rem;margin-bottom:2.5rem}
+  .services-intro{max-width:100%}
+  .services-grid{grid-template-columns:1fr}
+  .process-steps-row{grid-template-columns:1fr 1fr}
+}
+@media(max-width:540px){
+  .trust-bar{flex-direction:column;gap:0;padding:1rem var(--px-sm)}
+  .trust-item::after{display:none!important}
+  .trust-item{width:100%;border-bottom:1px solid rgba(255,255,255,.05);padding:.75rem 1rem}
+  .trust-item:last-child{border-bottom:none}
+  .process-steps-row{grid-template-columns:1fr}
+  .process-step-card{padding:1.5rem 1.25rem}
+  .service-card{padding:1.75rem 1.25rem}
+}
+
 </style>
 <link rel="preload" as="image" href="data:image/webp;base64,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" type="image/webp" fetchpriority="high">
 </head>
@@ -913,9 +1003,10 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
     <img src="data:image/webp;base64,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" alt="Forged Digital" class="drawer-logo-img" loading="lazy" decoding="async">
   </div>
   <ul class="drawer-links">
+    
+    
+    
     <li><a href="#services"     class="drawer-link">Services</a></li>
-    <li><a href="#process"      class="drawer-link">Process</a></li>
-    <li><a href="#results"      class="drawer-link">Results</a></li>
     <li><a href="#audit"        class="drawer-link">Free Audit</a></li>
     <li><a href="#portfolio"    class="drawer-link">Work</a></li>
     <li><a href="#contact"      class="drawer-link">Contact</a></li>
@@ -930,9 +1021,10 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
     <img src="data:image/webp;base64,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" alt="Forged Digital" class="nav-logo-img" loading="eager" decoding="sync">
   </a>
   <ul class="nav-links" role="list">
+    
+    
+    
     <li><a href="#services">Services</a></li>
-    <li><a href="#process">Process</a></li>
-    <li><a href="#results">Results</a></li>
     <li><a href="#audit">Free Audit</a></li>
     <li><a href="#portfolio">Work</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -968,122 +1060,126 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
   </div>
 </section>
 
-<!-- ═══ STATS ══════════════════════════════════════════════ -->
-<div class="stats-strip reveal" role="region" aria-label="Agency statistics">
-  <div class="stat-item"><div class="stat-num">150+</div><div class="stat-label">Projects Delivered</div></div>
-  <div class="stat-item"><div class="stat-num">340%</div><div class="stat-label">Avg. Traffic Growth</div></div>
-  <div class="stat-item"><div class="stat-num">8yr</div><div class="stat-label">In the Trenches</div></div>
-  <div class="stat-item"><div class="stat-num">97%</div><div class="stat-label">Client Retention</div></div>
+
+<!-- ═══ TRUST BAR ════════════════════════════════════════════ -->
+<div class="trust-bar reveal" role="region" aria-label="Why Forged Digital">
+  <div class="trust-item">
+    <div class="trust-item-icon">✦</div>
+    <div class="trust-item-copy">
+      <span class="trust-item-label">805-Based Agency</span>
+      <span class="trust-item-sub">Oxnard · Ventura County</span>
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-item-icon">✦</div>
+    <div class="trust-item-copy">
+      <span class="trust-item-label">Full-Stack Digital</span>
+      <span class="trust-item-sub">Design · SEO · Growth</span>
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-item-icon">✦</div>
+    <div class="trust-item-copy">
+      <span class="trust-item-label">Built to Convert</span>
+      <span class="trust-item-sub">Every pixel earns its place</span>
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-item-icon">✦</div>
+    <div class="trust-item-copy">
+      <span class="trust-item-label">Response in 24hrs</span>
+      <span class="trust-item-sub">No waiting. No runaround.</span>
+    </div>
+  </div>
 </div>
 
-<!-- ═══ SERVICES ═══════════════════════════════════════════ -->
+<!-- ═══ SERVICES + HOW WE WORK ══════════════════════════════ -->
 <section id="services" aria-labelledby="services-h">
+
+  <!-- Section header -->
   <div class="services-header reveal">
     <div>
-      <div class="section-tag">What We Do</div>
-      <h2 class="section-title" id="services-h">PRECISION<br>SERVICES</h2>
+      <div class="section-tag">What We Do &amp; How We Do It</div>
+      <h2 class="section-title" id="services-h">WEB DESIGN,<br>SEO &amp; DIGITAL<br>MARKETING<br>IN OXNARD, CA</h2>
     </div>
-    <p class="services-intro">Every engagement is purpose-built. We don't do cookie-cutter. We analyze, strategize, and execute with precision — applying maximum pressure exactly where it matters for Ventura County businesses.</p>
+    <p class="services-intro">We're a Ventura County web design and SEO agency built for local businesses that are serious about growth. Every project is custom — no templates, no guesswork, no wasted budget. Just precision work that puts you in front of the right people at the right time in the 805.</p>
   </div>
+
+  <!-- 3 Service cards -->
   <div class="services-grid">
     <div class="service-card reveal reveal-delay-1">
       <div class="service-num">01</div>
       <div class="service-icon" aria-hidden="true"></div>
-      <h3 class="service-name">Web<br>Design</h3>
-      <p class="service-desc">High-performance websites engineered to convert. Every pixel carries weight. Every interaction earns trust. Built fast, built to last.</p>
-      <div class="service-tags"><span class="service-tag">Custom Dev</span><span class="service-tag">UI/UX</span><span class="service-tag">Conversion</span><span class="service-tag">CMS</span></div>
+      <h3 class="service-name">Web Design &amp;<br>Development</h3>
+      <p class="service-desc">Custom websites built for speed, conversions, and mobile performance. We don't use page builders or recycled themes — every site is engineered from scratch to represent your brand and turn visitors into leads.</p>
+      <div class="service-tags">
+        <span class="service-tag">Custom Dev</span>
+        <span class="service-tag">UI/UX Design</span>
+        <span class="service-tag">Mobile-First</span>
+        <span class="service-tag">Conversion Rate</span>
+        <span class="service-tag">CMS Integration</span>
+      </div>
     </div>
     <div class="service-card reveal reveal-delay-2">
       <div class="service-num">02</div>
       <div class="service-icon" aria-hidden="true"></div>
-      <h3 class="service-name">SEO<br>Marketing</h3>
-      <p class="service-desc">Search dominance through technical mastery and strategic content. We don't chase algorithms — we understand them and outmaneuver them across the 805.</p>
-      <div class="service-tags"><span class="service-tag">Technical SEO</span><span class="service-tag">Content</span><span class="service-tag">Link Building</span><span class="service-tag">Local SEO</span></div>
+      <h3 class="service-name">Local SEO &amp;<br>Search Marketing</h3>
+      <p class="service-desc">Dominate Google search results for Oxnard, Ventura County, and the 805. We optimize your entire online presence — from technical SEO to Google Business Profile — so customers find you before they find your competitors.</p>
+      <div class="service-tags">
+        <span class="service-tag">Local SEO</span>
+        <span class="service-tag">Google Business</span>
+        <span class="service-tag">Technical SEO</span>
+        <span class="service-tag">Link Building</span>
+        <span class="service-tag">Content Strategy</span>
+      </div>
     </div>
     <div class="service-card reveal reveal-delay-3">
       <div class="service-num">03</div>
       <div class="service-icon" aria-hidden="true"></div>
-      <h3 class="service-name">Business<br>Growth</h3>
-      <p class="service-desc">End-to-end digital strategy. Paid media, reputation management, analytics, and growth systems that compound over time for Ventura County businesses.</p>
-      <div class="service-tags"><span class="service-tag">Paid Ads</span><span class="service-tag">Analytics</span><span class="service-tag">Strategy</span><span class="service-tag">Branding</span></div>
+      <h3 class="service-name">Digital Growth<br>&amp; Paid Media</h3>
+      <p class="service-desc">Beyond the website — paid ads, reputation management, analytics, and growth systems that bring in consistent leads. We build the full digital engine that keeps your business growing month over month.</p>
+      <div class="service-tags">
+        <span class="service-tag">Google Ads</span>
+        <span class="service-tag">Meta Ads</span>
+        <span class="service-tag">Analytics</span>
+        <span class="service-tag">Reputation Mgmt</span>
+        <span class="service-tag">Growth Strategy</span>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- ═══ PROCESS ════════════════════════════════════════════ -->
-<section id="process" aria-labelledby="process-h">
-  <div class="section-tag reveal">Our Method</div>
-  <h2 class="section-title reveal" id="process-h">HOW WE<br>FORGE IT</h2>
-  <div class="process-grid">
-    <div class="process-steps">
-      <div class="process-step reveal">
-        <div class="process-step-num" aria-hidden="true">01</div>
-        <div class="process-step-content"><h3>Discovery &amp; Audit</h3><p>We dissect your current position — site performance, competitor landscape, keyword gaps, and conversion leaks. No assumptions. Only data.</p></div>
-      </div>
-      <div class="process-step reveal reveal-delay-1">
-        <div class="process-step-num" aria-hidden="true">02</div>
-        <div class="process-step-content"><h3>Strategy &amp; Architecture</h3><p>A custom roadmap built around your specific goals. Site structure, content strategy, and SEO framework designed to scale across the 805 and beyond.</p></div>
-      </div>
-      <div class="process-step reveal reveal-delay-2">
-        <div class="process-step-num" aria-hidden="true">03</div>
-        <div class="process-step-content"><h3>Build &amp; Optimize</h3><p>We forge your digital presence with precision. Clean code, compelling design, and technical SEO woven into every layer from the ground up.</p></div>
-      </div>
-      <div class="process-step reveal reveal-delay-3">
-        <div class="process-step-num" aria-hidden="true">04</div>
-        <div class="process-step-content"><h3>Launch &amp; Dominate</h3><p>Go live with confidence. Ongoing optimization, rank tracking, and performance reporting keep you ahead across Ventura County.</p></div>
-      </div>
-    </div>
-    <div class="process-visual reveal" aria-hidden="true">
-      <div class="process-diagram">
-        <div class="diagram-ring ring-1"></div>
-        <div class="diagram-ring ring-2"></div>
-        <div class="diagram-ring ring-3"></div>
-        <div class="diagram-center">
-          <div class="diagram-center-icon">FD</div>
-          <div class="diagram-center-label">Method</div>
-        </div>
-      </div>
-    </div>
+  <!-- Process divider -->
+  <div class="process-divider reveal">
+    <div class="process-divider-line"></div>
+    <span class="process-divider-label">How we work</span>
+    <div class="process-divider-line"></div>
   </div>
-</section>
 
-<!-- ═══ RESULTS ════════════════════════════════════════════ -->
-<section id="results" aria-labelledby="results-h">
-  <div class="results-intro reveal">
-    <div>
-      <div class="section-tag">Proof</div>
-      <h2 class="section-title" id="results-h">RESULTS<br>THAT HIT</h2>
+  <!-- 4-step process row -->
+  <div class="process-steps-row">
+    <div class="process-step-card reveal reveal-delay-1">
+      <span class="process-step-num">01</span>
+      <div class="process-step-title">Discovery &amp; Audit</div>
+      <p class="process-step-desc">We analyze your current site, local search rankings, competitors, and conversion gaps. No assumptions — just data.</p>
     </div>
-    <p class="services-intro">Numbers don't lie. Here's what happens when strategy meets execution at Forged Digital. Real clients. Real growth. No smoke.</p>
-  </div>
-  <div class="results-grid">
-    <div class="result-card reveal reveal-delay-1">
-      <div class="result-industry">E-Commerce · Retail</div>
-      <div class="result-metric">+480%</div>
-      <div class="result-desc">Organic Traffic in 9 Months</div>
-      <div class="result-detail">Complete SEO overhaul and site rebuild took a struggling online retailer from page 4 to top 3 positions across 200+ target keywords.</div>
+    <div class="process-step-card reveal reveal-delay-2">
+      <span class="process-step-num">02</span>
+      <div class="process-step-title">Strategy &amp; Roadmap</div>
+      <p class="process-step-desc">A custom plan built around your market and goals — site architecture, keyword targeting, and a content framework built to rank.</p>
     </div>
-    <div class="result-card reveal reveal-delay-2">
-      <div class="result-industry">Home Services · Ventura County · 805</div>
-      <div class="result-metric">12×</div>
-      <div class="result-desc">Return on Ad Spend</div>
-      <div class="result-detail">New landing pages paired with local SEO strategy generated over 400 qualified leads per month for a home services company in the Ventura County market.</div>
+    <div class="process-step-card reveal reveal-delay-3">
+      <span class="process-step-num">03</span>
+      <div class="process-step-title">Build &amp; Optimize</div>
+      <p class="process-step-desc">We execute with precision. Clean code, compelling design, and SEO baked into every layer — not bolted on at the end.</p>
     </div>
-    <div class="result-card reveal reveal-delay-3">
-      <div class="result-industry">Professional Services · Law · Oxnard</div>
-      <div class="result-metric">#1</div>
-      <div class="result-desc">Google Rankings Achieved</div>
-      <div class="result-detail">A boutique law firm now ranks first in Ventura County for 15 high-intent practice area keywords, generating consistent case leads month over month.</div>
-    </div>
-    <div class="result-card reveal reveal-delay-4">
-      <div class="result-industry">Hospitality · Restaurant · 805</div>
-      <div class="result-metric">+220%</div>
-      <div class="result-desc">Online Reservation Growth</div>
-      <div class="result-detail">Web redesign with local SEO and Google Business optimization tripled online bookings within the first quarter post-launch.</div>
+    <div class="process-step-card reveal reveal-delay-4">
+      <span class="process-step-num">04</span>
+      <div class="process-step-title">Launch &amp; Grow</div>
+      <p class="process-step-desc">Go live, track rankings, optimize monthly. We don't disappear after launch — we keep pushing until you're the top result in the 805.</p>
     </div>
   </div>
-</section>
 
+</section>
 
 <!-- ═══ FREE AUDIT LEAD MAGNET ═══════════════════════════════ -->
 <section id="audit" aria-labelledby="audit-h">
@@ -1368,10 +1464,10 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
   <div class="footer-logo"><img src="data:image/webp;base64,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" alt="Forged Digital" class="footer-logo-img" loading="lazy" decoding="async"></div>
   <div class="footer-copy">© 2026 Forged Digital. All rights reserved.</div>
   <ul class="footer-links" role="list">
-    <li><a href="#services">Services</a></li>
+    
     <li><a href="#audit">Free Audit</a></li>
     <li><a href="#portfolio">Work</a></li>
-    <li><a href="#results">Results</a></li>
+    
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="footer-location">Proudly serving Oxnard · Ventura County · The 805 · Southern California</div>
