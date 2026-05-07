@@ -359,29 +359,7 @@ section{padding:6rem var(--px);position:relative}
 .process-steps{display:flex;flex-direction:column}
 .process-step{display:grid;grid-template-columns:70px 1fr;gap:1.5rem;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,.05);transition:background .3s}
 .process-step:first-child{border-top:1px solid rgba(255,255,255,.05)}
-.process-step-num{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;color:rgba(255,255,255,.08);transition:color .3s;line-height:1}
-.process-step:hover .process-step-num{color:var(--silver-dark)}
-.process-step-content h3{font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;letter-spacing:.1em;text-transform:uppercase;color:var(--silver);font-weight:600;margin-bottom:.5rem}
-.process-step-content p{font-size:.875rem;line-height:1.8;color:var(--silver-dark)}
-.process-visual{position:sticky;top:calc(var(--nav-h) + 2rem);height:440px;display:flex;align-items:center;justify-content:center}
-.process-diagram{width:100%;height:100%;position:relative}
-.diagram-ring{position:absolute;border:1px solid rgba(255,255,255,.06);border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);animation:rotateSlow linear infinite;will-change:transform}
-.ring-1{width:280px;height:280px;animation-duration:30s}
-.ring-2{width:190px;height:190px;animation-duration:20s;animation-direction:reverse;border-style:dashed}
-.ring-3{width:110px;height:110px;animation-duration:15s}
-.diagram-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
-.diagram-center-icon{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;background:var(--chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
-.diagram-center-label{font-family:'Barlow Condensed',sans-serif;font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--silver-dark)}
 
-/* ─── PORTFOLIO ─────────────────────────── */
-#portfolio{background:var(--black)}
-.portfolio-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:3rem}
-.portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:rgba(255,255,255,.05)}
-.portfolio-card{
-  background:var(--near-black);position:relative;overflow:hidden;
-  aspect-ratio:16/10;display:flex;flex-direction:column;justify-content:flex-end;
-  -webkit-tap-highlight-color:transparent;
-}
 .portfolio-card-wide{grid-column:span 2;aspect-ratio:16/7}
 
 .portfolio-preview{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;overflow:hidden}
@@ -934,50 +912,15 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
   border:1px solid rgba(255,255,255,.1);padding:.3rem .6rem;
 }
 
-/* ── 4-step process row (below cards, same section) ── */
-.process-divider{
-  display:flex;align-items:center;gap:1rem;
-  padding:2rem 0 2.5rem;
-}
-.process-divider-line{flex:1;height:1px;background:rgba(255,255,255,.06)}
-.process-divider-label{
-  font-family:'Barlow Condensed',sans-serif;font-size:.62rem;
-  letter-spacing:.4em;text-transform:uppercase;color:var(--silver-dark);
-  white-space:nowrap;
-}
 
-.process-steps-row{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:1px;background:rgba(255,255,255,.06);
-}
-.process-step-card{
-  background:var(--near-black);padding:2rem 1.75rem;
-  position:relative;transition:background .35s;
-}
-.process-step-card:hover{background:#141414}
-.process-step-num{
-  font-family:'Bebas Neue',sans-serif;font-size:2.8rem;
-  color:rgba(255,255,255,.06);line-height:1;margin-bottom:1rem;
-  transition:color .3s;display:block;
-}
+
+
+
+
+
 .process-step-card:hover .process-step-num{color:rgba(255,255,255,.15)}
-.process-step-title{
-  font-family:'Barlow Condensed',sans-serif;font-size:1rem;
-  letter-spacing:.1em;text-transform:uppercase;
-  color:var(--silver);font-weight:600;margin-bottom:.5rem;
-}
-.process-step-desc{font-size:.82rem;line-height:1.75;color:var(--silver-dark)}
 
-/* ── Responsive ── */
-@media(max-width:900px){
-  .trust-bar{gap:0;padding:1.25rem 1rem}
-  .trust-item{padding:.5rem 1.1rem}
-  .trust-item:nth-child(n+3)::after{display:none}
-  .services-header{grid-template-columns:1fr;gap:1.5rem;margin-bottom:2.5rem}
-  .services-intro{max-width:100%}
-  .services-grid{grid-template-columns:1fr}
-  .process-steps-row{grid-template-columns:1fr 1fr}
-}
+
 @media(max-width:540px){
   .trust-bar{flex-direction:column;gap:0;padding:1rem var(--px-sm)}
   .trust-item::after{display:none!important}
@@ -1093,92 +1036,62 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
   </div>
 </div>
 
-<!-- ═══ SERVICES + HOW WE WORK ══════════════════════════════ -->
+<!-- ═══ WHAT WE DO ══════════════════════════════════════════ -->
 <section id="services" aria-labelledby="services-h">
 
-  <!-- Section header -->
   <div class="services-header reveal">
     <div>
-      <div class="section-tag">What We Do &amp; How We Do It</div>
-      <h2 class="section-title" id="services-h">WEB DESIGN,<br>SEO &amp; DIGITAL<br>MARKETING<br>IN OXNARD, CA</h2>
+      <div class="section-tag">What We Do</div>
+      <h2 class="section-title" id="services-h">PRECISION<br>SERVICES</h2>
     </div>
-    <p class="services-intro">We're a Ventura County web design and SEO agency built for local businesses that are serious about growth. Every project is custom — no templates, no guesswork, no wasted budget. Just precision work that puts you in front of the right people at the right time in the 805.</p>
+    <p class="services-intro">We're a Ventura County web design and SEO agency built for local businesses serious about growth. Every project is custom — no templates, no guesswork. Just precision work that puts you in front of the right people at the right time in the 805.</p>
   </div>
 
-  <!-- 3 Service cards -->
   <div class="services-grid">
+
     <div class="service-card reveal reveal-delay-1">
       <div class="service-num">01</div>
       <div class="service-icon" aria-hidden="true"></div>
       <h3 class="service-name">Web Design &amp;<br>Development</h3>
-      <p class="service-desc">Custom websites built for speed, conversions, and mobile performance. We don't use page builders or recycled themes — every site is engineered from scratch to represent your brand and turn visitors into leads.</p>
+      <p class="service-desc">Custom websites engineered to convert — built fast, mobile-first, and from scratch. We start with a deep audit of your market, then design and build a site that earns trust and turns visitors into paying customers.</p>
       <div class="service-tags">
         <span class="service-tag">Custom Dev</span>
-        <span class="service-tag">UI/UX Design</span>
+        <span class="service-tag">UI/UX</span>
         <span class="service-tag">Mobile-First</span>
-        <span class="service-tag">Conversion Rate</span>
-        <span class="service-tag">CMS Integration</span>
+        <span class="service-tag">Conversion</span>
+        <span class="service-tag">CMS</span>
       </div>
     </div>
+
     <div class="service-card reveal reveal-delay-2">
       <div class="service-num">02</div>
       <div class="service-icon" aria-hidden="true"></div>
       <h3 class="service-name">Local SEO &amp;<br>Search Marketing</h3>
-      <p class="service-desc">Dominate Google search results for Oxnard, Ventura County, and the 805. We optimize your entire online presence — from technical SEO to Google Business Profile — so customers find you before they find your competitors.</p>
+      <p class="service-desc">We map your competitors, close the keyword gaps, and build the authority that puts you at the top of Google in Oxnard, Ventura County, and the 805 — then keep you there with ongoing optimization and tracking.</p>
       <div class="service-tags">
         <span class="service-tag">Local SEO</span>
         <span class="service-tag">Google Business</span>
         <span class="service-tag">Technical SEO</span>
         <span class="service-tag">Link Building</span>
-        <span class="service-tag">Content Strategy</span>
+        <span class="service-tag">Content</span>
       </div>
     </div>
+
     <div class="service-card reveal reveal-delay-3">
       <div class="service-num">03</div>
       <div class="service-icon" aria-hidden="true"></div>
       <h3 class="service-name">Digital Growth<br>&amp; Paid Media</h3>
-      <p class="service-desc">Beyond the website — paid ads, reputation management, analytics, and growth systems that bring in consistent leads. We build the full digital engine that keeps your business growing month over month.</p>
+      <p class="service-desc">We launch your full digital engine — paid ads, reputation management, and analytics — then optimize every month until your cost per lead drops and your pipeline stays full. Built to compound over time.</p>
       <div class="service-tags">
         <span class="service-tag">Google Ads</span>
         <span class="service-tag">Meta Ads</span>
         <span class="service-tag">Analytics</span>
-        <span class="service-tag">Reputation Mgmt</span>
-        <span class="service-tag">Growth Strategy</span>
+        <span class="service-tag">Reputation</span>
+        <span class="service-tag">Strategy</span>
       </div>
     </div>
-  </div>
 
-  <!-- Process divider -->
-  <div class="process-divider reveal">
-    <div class="process-divider-line"></div>
-    <span class="process-divider-label">How we work</span>
-    <div class="process-divider-line"></div>
   </div>
-
-  <!-- 4-step process row -->
-  <div class="process-steps-row">
-    <div class="process-step-card reveal reveal-delay-1">
-      <span class="process-step-num">01</span>
-      <div class="process-step-title">Discovery &amp; Audit</div>
-      <p class="process-step-desc">We analyze your current site, local search rankings, competitors, and conversion gaps. No assumptions — just data.</p>
-    </div>
-    <div class="process-step-card reveal reveal-delay-2">
-      <span class="process-step-num">02</span>
-      <div class="process-step-title">Strategy &amp; Roadmap</div>
-      <p class="process-step-desc">A custom plan built around your market and goals — site architecture, keyword targeting, and a content framework built to rank.</p>
-    </div>
-    <div class="process-step-card reveal reveal-delay-3">
-      <span class="process-step-num">03</span>
-      <div class="process-step-title">Build &amp; Optimize</div>
-      <p class="process-step-desc">We execute with precision. Clean code, compelling design, and SEO baked into every layer — not bolted on at the end.</p>
-    </div>
-    <div class="process-step-card reveal reveal-delay-4">
-      <span class="process-step-num">04</span>
-      <div class="process-step-title">Launch &amp; Grow</div>
-      <p class="process-step-desc">Go live, track rankings, optimize monthly. We don't disappear after launch — we keep pushing until you're the top result in the 805.</p>
-    </div>
-  </div>
-
 </section>
 
 <!-- ═══ FREE AUDIT LEAD MAGNET ═══════════════════════════════ -->
