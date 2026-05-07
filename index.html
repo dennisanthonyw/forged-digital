@@ -469,15 +469,6 @@ section{padding:6rem var(--px);position:relative}
 .portfolio-card:hover .portfolio-link{opacity:1;transform:translateY(0)}
 .portfolio-link:hover{color:var(--silver-light)}
 
-/* ─── TESTIMONIALS ──────────────────────── */
-#testimonials{background:var(--near-black)}
-.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-.testimonial-card{border:1px solid rgba(255,255,255,.06);padding:2rem;transition:border-color .3s}
-.testimonial-card:hover{border-color:rgba(255,255,255,.15)}
-.testimonial-quote{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;background:var(--chrome-subtle);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:.8;margin-bottom:1.2rem}
-.testimonial-text{font-size:.9rem;line-height:1.9;color:var(--silver-mid);margin-bottom:1.5rem;font-style:italic}
-.testimonial-author{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--silver);font-weight:600}
-.testimonial-role{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--silver-dark);margin-top:.25rem}
 
 /* ─── CONTACT ───────────────────────────── */
 #contact{background:var(--black);text-align:center;padding:7rem 2rem;position:relative;overflow:hidden}
@@ -737,6 +728,176 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
   .stat-num{font-size:1.9rem}
   .section-title{font-size:2.4rem}
 }
+
+/* ─── FREE AUDIT SECTION ────────────────────── */
+#audit{background:var(--near-black);position:relative;overflow:hidden;padding:6rem var(--px)}
+
+/* Big decorative background number */
+#audit::before{
+  content:'$497';
+  position:absolute;font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(8rem,22vw,18rem);
+  color:rgba(255,255,255,.025);
+  top:50%;right:-2rem;transform:translateY(-50%);
+  pointer-events:none;letter-spacing:-.02em;line-height:1;
+  user-select:none;white-space:nowrap;
+}
+
+/* Scarcity badge */
+.audit-badge{
+  display:inline-flex;align-items:center;gap:.6rem;
+  border:1px solid rgba(192,192,192,.25);
+  padding:.45rem 1.1rem;margin-bottom:1.75rem;
+  position:relative;
+}
+.audit-badge-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:#c0392b;
+  box-shadow:0 0 8px #c0392b;
+  animation:pulseDot 1.8s ease-in-out infinite;
+  flex-shrink:0;
+}
+@keyframes pulseDot{
+  0%,100%{opacity:1;box-shadow:0 0 6px #c0392b}
+  50%{opacity:.5;box-shadow:0 0 14px #c0392b}
+}
+.audit-badge-text{
+  font-family:'Barlow Condensed',sans-serif;font-size:.68rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--silver-mid);
+}
+.audit-badge-text strong{color:var(--silver-light)}
+
+.audit-layout{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center;
+}
+
+/* Left — copy */
+.audit-copy{}
+.audit-value-tag{
+  font-family:'Barlow Condensed',sans-serif;font-size:.65rem;
+  letter-spacing:.45em;text-transform:uppercase;color:var(--silver-dark);
+  margin-bottom:.75rem;display:flex;align-items:center;gap:1rem;
+}
+.audit-value-tag::before{content:'';width:28px;height:1px;background:var(--silver-dark);flex-shrink:0}
+
+.audit-headline{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(2.8rem,5.5vw,5rem);
+  line-height:.92;letter-spacing:.03em;
+  background:var(--chrome);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-bottom:1.25rem;
+}
+.audit-sub{
+  font-size:1rem;line-height:1.8;color:var(--silver-mid);
+  max-width:420px;margin-bottom:2rem;
+}
+
+/* Bullets */
+.audit-bullets{
+  list-style:none;display:flex;flex-direction:column;gap:.85rem;
+  margin-bottom:2rem;
+}
+.audit-bullets li{
+  display:flex;align-items:flex-start;gap:.85rem;
+  font-size:.9rem;line-height:1.6;color:var(--silver-mid);
+}
+.audit-bullet-icon{
+  flex-shrink:0;width:20px;height:20px;margin-top:.1rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.audit-bullet-icon::before{
+  content:'';display:block;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--chrome-subtle);
+  box-shadow:0 0 6px rgba(200,200,200,.25);
+}
+.audit-bullets li strong{color:var(--silver-light)}
+
+/* Right — form card */
+.audit-form-card{
+  background:rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.09);
+  padding:2.5rem 2rem;
+  position:relative;
+  /* chrome accent top border */
+}
+.audit-form-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:var(--chrome-subtle);
+}
+.audit-form-title{
+  font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.06em;
+  background:var(--chrome-subtle);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:.4rem;line-height:1;
+}
+.audit-form-subtitle{
+  font-family:'Barlow Condensed',sans-serif;font-size:.72rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--silver-dark);margin-bottom:1.75rem;
+}
+.audit-form{display:flex;flex-direction:column;gap:.9rem}
+
+/* Reuse existing form-input / form-label styles — just add audit-specific submit */
+.audit-submit{
+  font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:1rem 2rem;
+  background:var(--chrome);
+  color:var(--black);
+  border:none;cursor:pointer;
+  font-weight:700;min-height:58px;width:100%;
+  transition:opacity .3s,transform .2s;
+  margin-top:.35rem;
+  -webkit-tap-highlight-color:transparent;
+}
+.audit-submit:hover{opacity:.82;transform:translateY(-2px)}
+.audit-submit:active{opacity:.65;transform:none}
+.audit-submit:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+.audit-guarantee{
+  display:flex;align-items:center;gap:.6rem;
+  margin-top:1.1rem;
+}
+.audit-guarantee-icon{
+  font-size:1rem;flex-shrink:0;
+  background:var(--chrome-subtle);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.audit-guarantee-text{
+  font-family:'Barlow Condensed',sans-serif;font-size:.62rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--silver-dark);
+  line-height:1.5;
+}
+
+/* Audit success state */
+.audit-success{
+  display:none;text-align:center;padding:2.5rem 1.5rem;
+}
+.audit-success.show{display:block}
+.audit-success-icon{
+  font-size:2.2rem;margin-bottom:1rem;
+  background:var(--chrome);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.audit-success h3{
+  font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.1em;
+  color:var(--silver-light);margin-bottom:.5rem;
+}
+.audit-success p{font-size:.875rem;color:var(--silver-mid);line-height:1.7}
+
+/* ── Responsive ── */
+@media(max-width:900px){
+  .audit-layout{grid-template-columns:1fr;gap:3rem}
+  .audit-sub{max-width:100%}
+  #audit{padding:4.5rem var(--px)}
+  #audit::before{display:none}
+}
+@media(max-width:540px){
+  #audit{padding:3.5rem var(--px-sm)}
+  .audit-form-card{padding:1.75rem 1.25rem}
+  .audit-headline{font-size:2.6rem}
+}
+
 </style>
 <link rel="preload" as="image" href="data:image/webp;base64,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" type="image/webp" fetchpriority="high">
 </head>
@@ -755,6 +916,7 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
     <li><a href="#services"     class="drawer-link">Services</a></li>
     <li><a href="#process"      class="drawer-link">Process</a></li>
     <li><a href="#results"      class="drawer-link">Results</a></li>
+    <li><a href="#audit"        class="drawer-link">Free Audit</a></li>
     <li><a href="#portfolio"    class="drawer-link">Work</a></li>
     <li><a href="#contact"      class="drawer-link">Contact</a></li>
   </ul>
@@ -771,6 +933,7 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
     <li><a href="#services">Services</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#results">Results</a></li>
+    <li><a href="#audit">Free Audit</a></li>
     <li><a href="#portfolio">Work</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -921,6 +1084,98 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
   </div>
 </section>
 
+
+<!-- ═══ FREE AUDIT LEAD MAGNET ═══════════════════════════════ -->
+<section id="audit" aria-labelledby="audit-h">
+
+  <!-- Scarcity badge -->
+  <div class="audit-badge reveal">
+    <span class="audit-badge-dot"></span>
+    <span class="audit-badge-text"><strong>Only 10 spots available</strong> &nbsp;·&nbsp; This month</span>
+  </div>
+
+  <div class="audit-layout">
+
+    <!-- LEFT: Copy -->
+    <div class="audit-copy">
+      <div class="audit-value-tag reveal">Free $497 Value</div>
+      <h2 class="audit-headline reveal" id="audit-h">FREE 805<br>LOCAL SEO &<br>WEBSITE AUDIT</h2>
+      <p class="audit-sub reveal">We'll tear apart your online presence and show you exactly how much business you're losing — then hand you 5–7 fixes you can act on immediately.</p>
+
+      <ul class="audit-bullets reveal">
+        <li>
+          <span class="audit-bullet-icon"></span>
+          <span><strong>Find out why you're invisible on Google</strong> — we pinpoint every reason competitors rank above you in the 805</span>
+        </li>
+        <li>
+          <span class="audit-bullet-icon"></span>
+          <span><strong>See exactly what your site is costing you</strong> — slow speed, broken UX, and missed conversions translated into real dollars</span>
+        </li>
+        <li>
+          <span class="audit-bullet-icon"></span>
+          <span><strong>Get a custom action plan</strong> — not generic advice. A prioritized list built for your specific business and market</span>
+        </li>
+        <li>
+          <span class="audit-bullet-icon"></span>
+          <span><strong>No fluff. No pitch call.</strong> — just a straight-talking report delivered within 48 hours</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="reveal reveal-delay-2">
+      <div class="audit-form-card">
+        <div class="audit-form-title">Claim Your Free Audit</div>
+        <div class="audit-form-subtitle">Takes 30 seconds &nbsp;·&nbsp; No credit card</div>
+
+        <form class="audit-form" id="auditForm" novalidate>
+          <div class="form-group">
+            <label class="form-label" for="auditFirstName">First Name *</label>
+            <input class="form-input" type="text" id="auditFirstName" name="firstName"
+                   placeholder="First name" required autocomplete="given-name"
+                   data-fs-field>
+            <span class="form-field-error" data-fs-error="firstName"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="auditBusiness">Business Name *</label>
+            <input class="form-input" type="text" id="auditBusiness" name="businessName"
+                   placeholder="Your business name" required
+                   data-fs-field>
+            <span class="form-field-error" data-fs-error="businessName"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="auditEmail">Email Address *</label>
+            <input class="form-input" type="email" id="auditEmail" name="email"
+                   placeholder="you@yourbusiness.com" required autocomplete="email"
+                   data-fs-field>
+            <span class="form-field-error" data-fs-error="email"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="auditPhone">Phone <span style="opacity:.5;font-size:.55rem;letter-spacing:.1em">(optional)</span></label>
+            <input class="form-input" type="tel" id="auditPhone" name="phone"
+                   placeholder="(805) 000-0000" autocomplete="tel">
+          </div>
+          <!-- Hidden field so Formspree emails are labelled clearly -->
+          <input type="hidden" name="_subject" value="🔥 New Free Audit Request — Forged Digital">
+          <button type="submit" class="audit-submit" id="auditSubmitBtn">Get My Free Audit →</button>
+        </form>
+
+        <div class="audit-success" id="auditSuccess" role="status" aria-live="polite">
+          <div class="audit-success-icon">✦</div>
+          <h3>You're In.</h3>
+          <p>Your free audit is on its way. We'll be in touch within 48 hours with your personalized 805 SEO & Website breakdown.</p>
+        </div>
+
+        <div class="audit-guarantee">
+          <span class="audit-guarantee-icon">✦</span>
+          <span class="audit-guarantee-text">100% free &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; No sales pressure</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- ═══ PORTFOLIO ══════════════════════════════════════════ -->
 <section id="portfolio" aria-labelledby="portfolio-h">
   <div class="portfolio-header reveal">
@@ -1004,31 +1259,6 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS ═══════════════════════════════════════ -->
-<section id="testimonials" aria-labelledby="testimonials-h">
-  <div class="section-tag reveal">Client Voices</div>
-  <h2 class="section-title reveal" id="testimonials-h">THEY SAID IT</h2>
-  <div class="testimonials-grid">
-    <div class="testimonial-card reveal reveal-delay-1">
-      <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
-      <blockquote class="testimonial-text">Forged Digital didn't just build us a website — they built us a revenue machine. Within six months our leads tripled and our cost per acquisition dropped by half.</blockquote>
-      <div class="testimonial-author">Marcus R.</div>
-      <div class="testimonial-role">CEO, Apex Plumbing Group · Ventura County</div>
-    </div>
-    <div class="testimonial-card reveal reveal-delay-2">
-      <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
-      <blockquote class="testimonial-text">The SEO results were faster than anything I'd seen with previous agencies. These guys actually know what they're doing and they're obsessed with results.</blockquote>
-      <div class="testimonial-author">Diana C.</div>
-      <div class="testimonial-role">Founder, La Maison Boutique · Oxnard, CA</div>
-    </div>
-    <div class="testimonial-card reveal reveal-delay-3">
-      <div class="testimonial-quote" aria-hidden="true">&ldquo;</div>
-      <blockquote class="testimonial-text">They took a dated, clunky site and turned it into something that finally looks as premium as our firm. Our clients comment on it constantly.</blockquote>
-      <div class="testimonial-author">James L.</div>
-      <div class="testimonial-role">Managing Partner, Leland Law · Ventura, CA</div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ CONTACT ════════════════════════════════════════════ -->
 <section id="contact" aria-labelledby="contact-h">
@@ -1139,6 +1369,7 @@ footer{background:var(--near-black);border-top:1px solid rgba(255,255,255,.06);p
   <div class="footer-copy">© 2026 Forged Digital. All rights reserved.</div>
   <ul class="footer-links" role="list">
     <li><a href="#services">Services</a></li>
+    <li><a href="#audit">Free Audit</a></li>
     <li><a href="#portfolio">Work</a></li>
     <li><a href="#results">Results</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -1213,6 +1444,22 @@ document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
 /* ── FORMSPREE INIT ─────────────────────────────────────── */
 window.formspree = window.formspree || function(){(formspree.q=formspree.q||[]).push(arguments);};
 formspree('initForm',{formElement:'#contactForm',formId:'mvzlqvqd'});
+
+/* ── AUDIT FORM — Formspree ─────────────────────────────────── */
+window.formspree('initForm',{formElement:'#auditForm',formId:'mvzlqvqd'});
+
+// Custom success handler — SDK triggers data-fs-success but we use our own div
+document.getElementById('auditForm').addEventListener('submit',function(){
+  // Give the SDK a beat to process, then mirror success state
+  setTimeout(function(){
+    var form = document.getElementById('auditForm');
+    var succ = document.getElementById('auditSuccess');
+    if(form && form.style.display==='none'){
+      // SDK already hid it — do nothing
+    }
+  },2500);
+});
+
 /* ── LAZY-LOAD PORTFOLIO BACKGROUNDS ───────────────────────────────────── */
 (function(){
   var bgObs = new IntersectionObserver(function(entries){
